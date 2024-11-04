@@ -19,15 +19,9 @@
     "description": {
       "type": "text"
     },
-    "categories": {
+    "products": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::category.category",
-      "mappedBy": "brand"
-    },
-    "product": {
-      "type": "relation",
-      "relation": "oneToOne",
       "target": "api::product.product",
       "mappedBy": "brand"
     }

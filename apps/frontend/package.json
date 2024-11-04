@@ -13,6 +13,7 @@
   "dependencies": {
     "@graphql-codegen/cli": "^5.0.3",
     "@nuxtjs/apollo": "^5.0.0-alpha.14",
+    "@nuxtjs/tailwindcss": "^6.12.2",
     "nuxt": "^3.13.2",
     "vue": "latest",
     "vue-router": "latest"

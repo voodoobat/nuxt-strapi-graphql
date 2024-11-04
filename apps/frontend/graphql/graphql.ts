@@ -46,8 +46,6 @@ export type BooleanFilterInput = {
 
 export type Brand = {
   __typename?: 'Brand';
-  categories: Array<Maybe<Category>>;
-  categories_connection?: Maybe<CategoryRelationResponseCollection>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   description?: Maybe<Scalars['String']['output']>;
   documentId: Scalars['ID']['output'];
@@ -55,20 +53,6 @@ export type Brand = {
   product?: Maybe<Product>;
   publishedAt?: Maybe<Scalars['DateTime']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
-};
-
-
-export type BrandCategoriesArgs = {
-  filters?: InputMaybe<CategoryFiltersInput>;
-  pagination?: InputMaybe<PaginationArg>;
-  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-
-export type BrandCategories_ConnectionArgs = {
-  filters?: InputMaybe<CategoryFiltersInput>;
-  pagination?: InputMaybe<PaginationArg>;
-  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type BrandEntityResponseCollection = {
@@ -79,7 +63,6 @@ export type BrandEntityResponseCollection = {
 
 export type BrandFiltersInput = {
   and?: InputMaybe<Array<InputMaybe<BrandFiltersInput>>>;
-  categories?: InputMaybe<CategoryFiltersInput>;
   createdAt?: InputMaybe<DateTimeFilterInput>;
   description?: InputMaybe<StringFilterInput>;
   documentId?: InputMaybe<IdFilterInput>;
@@ -94,7 +77,6 @@ export type BrandFiltersInput = {
 };
 
 export type BrandInput = {
-  categories?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   description?: InputMaybe<Scalars['String']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
@@ -104,7 +86,6 @@ export type BrandInput = {
 
 export type Category = {
   __typename?: 'Category';
-  brand?: Maybe<Brand>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   description?: Maybe<Scalars['String']['output']>;
   documentId: Scalars['ID']['output'];
@@ -122,7 +103,6 @@ export type CategoryEntityResponseCollection = {
 
 export type CategoryFiltersInput = {
   and?: InputMaybe<Array<InputMaybe<CategoryFiltersInput>>>;
-  brand?: InputMaybe<BrandFiltersInput>;
   createdAt?: InputMaybe<DateTimeFilterInput>;
   description?: InputMaybe<StringFilterInput>;
   documentId?: InputMaybe<IdFilterInput>;
@@ -137,7 +117,6 @@ export type CategoryFiltersInput = {
 };
 
 export type CategoryInput = {
-  brand?: InputMaybe<Scalars['ID']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
@@ -550,6 +529,7 @@ export type Product = {
   categories: Array<Maybe<Category>>;
   categories_connection?: Maybe<CategoryRelationResponseCollection>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
   documentId: Scalars['ID']['output'];
   name: Scalars['String']['output'];
   price: Scalars['Float']['output'];
@@ -582,6 +562,7 @@ export type ProductFiltersInput = {
   brand?: InputMaybe<BrandFiltersInput>;
   categories?: InputMaybe<CategoryFiltersInput>;
   createdAt?: InputMaybe<DateTimeFilterInput>;
+  description?: InputMaybe<StringFilterInput>;
   documentId?: InputMaybe<IdFilterInput>;
   locale?: InputMaybe<StringFilterInput>;
   localizations?: InputMaybe<ProductFiltersInput>;
@@ -596,6 +577,7 @@ export type ProductFiltersInput = {
 export type ProductInput = {
   brand?: InputMaybe<Scalars['ID']['input']>;
   categories?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  description?: InputMaybe<Scalars['String']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   price?: InputMaybe<Scalars['Float']['input']>;

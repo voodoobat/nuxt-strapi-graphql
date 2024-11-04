@@ -27,11 +27,14 @@
       "target": "api::category.category",
       "mappedBy": "product"
     },
+    "description": {
+      "type": "text"
+    },
     "brand": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::brand.brand",
-      "inversedBy": "product"
+      "inversedBy": "products"
     }
   }
 }

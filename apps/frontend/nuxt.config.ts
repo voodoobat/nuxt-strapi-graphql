@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/apollo"],
+  modules: ["@nuxtjs/apollo", "@nuxtjs/tailwindcss"],
   apollo: {
     clients: {
       default: { httpEndpoint: "http://localhost:1337/graphql" },
