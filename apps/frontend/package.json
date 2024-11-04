@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "frontend",
   "private": true,
   "type": "module",
   "scripts": {
@@ -7,9 +7,12 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "codegen": "graphql-codegen --config codegen.mjs"
   },
   "dependencies": {
+    "@graphql-codegen/cli": "^5.0.3",
+    "@nuxtjs/apollo": "^5.0.0-alpha.14",
     "nuxt": "^3.13.2",
     "vue": "latest",
     "vue-router": "latest"
