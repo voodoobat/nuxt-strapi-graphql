@@ -5,13 +5,11 @@
 </template>
 
 <script setup lang="ts">
-import type { Product } from "~/graphql/graphql";
+import type { ProductQuery } from "~/graphql/graphql";
 import { productQuery } from "~/layers/product/graphql/productQuery";
 
 const route = useRoute();
-const { data } = useAsyncQuery<{
-  product: Product;
-}>(productQuery, {
+const { data } = useAsyncQuery<ProductQuery>(productQuery, {
   documentId: route.params.id,
 });
 </script>

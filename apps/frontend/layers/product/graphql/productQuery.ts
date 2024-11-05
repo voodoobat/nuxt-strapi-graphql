@@ -1,5 +1,5 @@
 export const productQuery = gql`
-  query Query($documentId: ID!) {
+  query Product($documentId: ID!) {
     product(documentId: $documentId) {
       name
       price

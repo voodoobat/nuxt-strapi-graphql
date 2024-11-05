@@ -18,10 +18,8 @@
 </template>
 
 <script setup lang="ts">
-import type { Product } from "~/graphql/graphql";
+import type { ProductCollectionQuery } from "~/graphql/graphql";
 import { productCollectionQuery } from "~/layers/product/graphql/productCollectionQuery";
 
-const { data } = useAsyncQuery<{
-  products: Product[];
-}>(productCollectionQuery);
+const { data } = useAsyncQuery<ProductCollectionQuery>(productCollectionQuery);
 </script>

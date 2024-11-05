@@ -1,5 +1,5 @@
 export const productCollectionQuery = gql`
-  query Query {
+  query ProductCollection {
     products {
       documentId
       name
