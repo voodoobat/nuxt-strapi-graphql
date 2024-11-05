@@ -7,7 +7,10 @@ export const productQuery = gql`
       description
       brand {
         name
-        description
+        products {
+          documentId
+          name
+        }
       }
     }
   }

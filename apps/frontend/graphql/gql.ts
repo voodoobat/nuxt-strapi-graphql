@@ -15,7 +15,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 const documents = {
     "\n  query ProductCollection {\n    products {\n      documentId\n      name\n      price\n      brand {\n        name\n      }\n    }\n  }\n": types.ProductCollectionDocument,
-    "\n  query Product($documentId: ID!) {\n    product(documentId: $documentId) {\n      name\n      price\n      documentId\n      description\n      brand {\n        name\n        description\n      }\n    }\n  }\n": types.ProductDocument,
+    "\n  query Product($documentId: ID!) {\n    product(documentId: $documentId) {\n      name\n      price\n      documentId\n      description\n      brand {\n        name\n        products {\n          documentId\n          name\n        }\n      }\n    }\n  }\n": types.ProductDocument,
 };
 
 /**
@@ -39,7 +39,7 @@ export function graphql(source: "\n  query ProductCollection {\n    products {\n
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query Product($documentId: ID!) {\n    product(documentId: $documentId) {\n      name\n      price\n      documentId\n      description\n      brand {\n        name\n        description\n      }\n    }\n  }\n"): (typeof documents)["\n  query Product($documentId: ID!) {\n    product(documentId: $documentId) {\n      name\n      price\n      documentId\n      description\n      brand {\n        name\n        description\n      }\n    }\n  }\n"];
+export function graphql(source: "\n  query Product($documentId: ID!) {\n    product(documentId: $documentId) {\n      name\n      price\n      documentId\n      description\n      brand {\n        name\n        products {\n          documentId\n          name\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query Product($documentId: ID!) {\n    product(documentId: $documentId) {\n      name\n      price\n      documentId\n      description\n      brand {\n        name\n        products {\n          documentId\n          name\n        }\n      }\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

@@ -21,12 +21,6 @@
       "type": "decimal",
       "required": true
     },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category",
-      "mappedBy": "product"
-    },
     "description": {
       "type": "text"
     },
@@ -34,6 +28,12 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::brand.brand",
+      "inversedBy": "products"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
       "inversedBy": "products"
     }
   }
