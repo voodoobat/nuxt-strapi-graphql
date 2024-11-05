@@ -20,21 +20,12 @@
 </template>
 
 <script setup lang="ts">
-import { NuxtLink } from "#build/components";
-import type {
-  ProductQuery,
-  ProductQueryVariables,
-  Scalars,
-} from "~/graphql/graphql";
-import { productQuery } from "~/layers/product/graphql/productQuery";
+import { useProduct } from "../../service/useProduct";
 
 const route = useRoute();
-const productId = route.params.id as Scalars["ID"]["input"];
-const queryVars: ProductQueryVariables = {
-  documentId: productId,
-};
+const productId = route.params.id as string;
 
-const { data } = await useAsyncQuery<ProductQuery>(productQuery, queryVars);
+const { data } = await useProduct(productId);
 
 const currentBrandProducts = computed(() => {
   const products = data.value?.product?.brand?.products;

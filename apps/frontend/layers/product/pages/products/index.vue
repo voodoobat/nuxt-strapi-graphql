@@ -18,10 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ProductCollectionQuery } from "~/graphql/graphql";
-import { productCollectionQuery } from "~/layers/product/graphql/productCollectionQuery";
+import { useProductCollection } from "~/layers/product/service/useProductCollection";
 
-const { data } = await useAsyncQuery<ProductCollectionQuery>(
-  productCollectionQuery,
-);
+const { data } = await useProductCollection();
 </script>
