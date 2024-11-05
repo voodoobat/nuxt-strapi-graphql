@@ -10,7 +10,7 @@
         <NuxtLink :to="`/products/${product?.documentId}`" class="text-lg">{{
           product?.name
         }}</NuxtLink>
-        <p>brand: {{ product?.brand.name }}</p>
+        <p>brand: {{ product?.brand?.name }}</p>
         <p>price: {{ product?.price }}</p>
       </div>
     </div>
