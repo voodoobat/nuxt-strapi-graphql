@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { useProductCollection } from "~/layers/product/service/useProductCollection";
+import { useProductCollection } from "~/layers/product/services/useProductCollection";
 
 const { data } = await useProductCollection();
 </script>

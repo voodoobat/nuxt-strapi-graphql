@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { useProduct } from "../../service/useProduct";
+import { useProduct } from "../../services/useProduct";
 
 const route = useRoute();
 const productId = route.params.id as string;
