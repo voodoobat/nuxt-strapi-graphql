@@ -1,12 +1,12 @@
 {
-  "name": "with-vue-nuxt",
+  "name": "nuxt-strapi-graphql",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "codegen": "turbo run codegen"
+    "codegen": "turbo run codegen --filter='./apps/frontend'"
   },
   "devDependencies": {
     "prettier": "^3.2.5",

@@ -6,6 +6,9 @@
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".nuxt/**", ".output/**", "dist/**"]
     },
+    "codegen": {
+      "dependsOn": ["^codegen"]
+    },
     "lint": {},
     "dev": {
       "cache": false,

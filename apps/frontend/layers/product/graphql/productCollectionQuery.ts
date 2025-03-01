@@ -8,6 +8,7 @@ export const productCollectionQuery = gql`
       price
       brand {
         name
+        description
       }
     }
   }
